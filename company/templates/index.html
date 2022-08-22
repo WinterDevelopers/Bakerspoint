@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../../static/css/style.css">
+  <link rel="stylesheet" href="../static/css/style.css">
   <title>Document</title>
 </head>
 <body>
@@ -32,9 +32,9 @@
     </div>
 
     <div class="img-offset">
-      <img src="../../static/images/bread.png" alt="Baked Bread">
-      <img src="../../static/images/store.png" alt="Store Door">
-      <img src="../../static/images/cup-cake.png" alt="Cup Cake">
+      <img src="../static/images/bread.png" alt="Baked Bread">
+      <img src="../static/images/store.png" alt="Store Door">
+      <img src="../static/images/cup-cake.png" alt="Cup Cake">
     </div>
   </section>
 
@@ -273,33 +273,43 @@
     <div class="footer-line" ></div>
     <div class="footer-content">
       <div>
-        <div>
+        <div class="footer-content-head-section">
           <div class="footer-content-header"><h4>navigator</h4></div> 
-          <span ><img class="footer-img" src="../static/images/right-arrow-svgrepo-com(1).svg" alt=""></span>
+          <span ><img name="footer-img" src="../static/images/right-arrow-svgrepo-com(1).svg" alt=""></span>
         </div>
-        <p>Sign Up</p>
-        <p>Blog</p>
-        <p>Products</p>
+        <div class="footer-content-p no-display-min" name="footer-dropdown">
+          <p>Sign Up</p>
+          <p>Blog</p>
+          <p>Products</p>
+        </div>
       </div>
       <div>
-        <div>
+        <div class="footer-content-head-section">
           <div class="footer-content-header"><h4>Help</h4></div> 
-          <span ><img class="footer-img" src="../static/images/right-arrow-svgrepo-com(1).svg" alt=""></span>
+          <span ><img name="footer-img" src="../static/images/right-arrow-svgrepo-com(1).svg" alt=""></span>
         </div>
-        <p>Ordering</p>
-        <p>Make Payment</p>
-        <p>Delivery</p>
+        <div class="footer-content-p no-display-min" name="footer-dropdown">
+          <p>Ordering</p>
+          <p>Payments</p>
+          <p>Delivery</p>
+        </div>
       </div>
       <div>
-        <div>
+        <div class="footer-content-head-section">
           <div class="footer-content-header"><h4>Socials</h4></div> 
-          <span ><img class="footer-img" src="../static/images/right-arrow-svgrepo-com(1).svg"  alt=""></span>
+          <span ><img name="footer-img" src="../static/images/right-arrow-svgrepo-com(1).svg"  alt=""></span>
         </div>
-        <p>E-mail</p>
-        <p>Instagram</p>
-        <p>Whatsapp</p>
+        <div class="footer-content-p no-display-min" name="footer-dropdown">
+          <p>E-mail</p>
+          <p>Instagram</p>
+          <p>Whatsapp</p>
+        </div>
       </div>
     </div>
+    <section class="footer-bottom">
+      <div>copyrights 2015-2022</div>
+      <div>Developed by winterdevelopers</div>
+    </section>
   </footer>
 
   <script src="{% static 'js/sctipt.js' %}"></script>
