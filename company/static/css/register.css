@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;500&family=Lato:wght@400;700&family=Roboto+Slab:wght@400;500&family=Ubuntu:wght@300;400;500&display=swap');
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1, h2, h4{
+  font-family: 'roboto slab';
+  font-weight: 400;
+}
+
+p, button, input::placeholder{
+  font-family: 'Roboto Slab';
+}
+
+body{
+  background: #fafafa;
+}
+
+.form-body{
+  display: flex;
+  align-items: center;
+  height: 100vh;
+}
+
+.form{
+  width: 40%;
+  margin: 0 auto;
+  outline: .05rem dotted grey;
+  padding: 2rem 0 4rem 0;
+  background: #fff;
+}
+
+.form h2{
+  text-align: center;
+}
+
+.form-row{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  padding: 0 3rem;
+  margin: 3rem 0;
+}
+
+input{
+  width: 45%;
+  border: none;
+  border-bottom: .14rem solid grey;
+  outline: none;
+  padding: .6rem .8rem;
+}
+
+input::placeholder{
+  padding-bottom: 15rem;
+  font-size: 1rem;
+}
+
+button{
+  margin: 0 auto;
+  padding: 1rem 5rem;
+  font-size: 1.2rem;
+  color: #fff;
+  outline: none;
+  border: none;
+  background: #000;
+  border-radius: .28rem;
+  transition: all ease-in-out .3s;
+}
+
+button:hover{
+  background: #2d232b;
+  color: #fff;
+}
+
+.button-row{
+  margin: 6rem 0 0 0;
+}
+
+/* Media Queries */
+@media (max-width: 1150px) and (min-width: 780px){
+  input::placeholder{
+    font-size: .8rem;
+  }
+  .form{
+    width: 60%;
+  }
+}
+
+@media (max-width: 780px) and (min-width: 500px){
+  input::placeholder{
+    font-size: .8rem;
+  }
+  .form{
+    width: 80%;
+  }
+}
+
+@media (max-width: 500px){
+  .form-body{
+    height: 100%;
+    margin: 2rem 0;
+  }
+  input::placeholder{
+    font-size: .8rem;
+  }
+  .form{
+    width: 90%;
+  }
+  .form-row{
+    flex-direction: column;
+    margin: 0;
+  }
+  input{
+    width: 100%;
+    margin: 1rem 0;
+  }
+  .button-row{
+    margin: 3rem 0;
+  }
+  button{
+    font-size: .9rem;
+    padding: 1rem 0;
+    width: 70%;
+  }
+}

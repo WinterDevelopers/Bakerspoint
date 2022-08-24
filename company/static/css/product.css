@@ -1,0 +1,127 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: #f8f8f8;
+}
+
+.cookie{
+  height: 50rem;
+  /* background: #f8f8f8; */
+}
+
+.cookie-flex{
+  width: 100%;
+  /* 35rem */
+  height: 30rem;
+  display: flex;
+}
+
+.img-div{
+  width: 60%;
+}
+
+.text-div{
+  width: 40%;
+  background: #d9c3a9;
+  padding: 4rem 0 0 0;
+}
+
+.img-div img{
+  width: 100%;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.text-div h2{
+  width: 80%;
+  margin: 0 auto;
+  padding: 3rem 0;
+  font-size: 2.5rem;
+  text-align: center;
+}
+.text-div p{
+  width: 60%;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.line{
+  /* position: relative; */
+  width: 80%;
+  margin: 4rem auto;
+  /* padding: 3rem 0; */
+  border-top: .1rem solid #000;
+}
+
+.product-main{
+  width: 85%;
+  margin: 1rem auto;
+  justify-content: space-around;
+  /* position: absolute; */
+  /* top: 12rem; */
+  /* left: 0; */
+  /* right: 0; */
+  padding-bottom: 5rem;
+  flex-wrap: wrap;
+}
+
+.product-card{
+  /* height: 15rem; */
+  background: #fff;
+  border-radius: .4rem;
+  margin-bottom: 2rem;
+}
+
+.product-text{
+  text-align: center;
+  padding: 1rem 0 1rem 0;
+}
+
+.product-text h6{
+  padding: 0 0 2rem 0;
+}
+
+.scroll{
+  width: 30%;
+  margin: 3rem auto; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scroll button{
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 0;
+  background: #d9d9d9;
+  outline: none;
+}
+
+.scroll button:hover{
+  background: #968776;
+}
+
+.scroll button img{
+  width: 2.5rem;
+}
+
+.scroll h4{
+  width: 3rem;
+  height: 3rem;
+  font-weight: lighter;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border: .2rem solid #968776;
+  border-radius: 50%;
+}
+
+
