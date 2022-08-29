@@ -21,4 +21,5 @@ from company import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='home'),
+    path('order/',views.orderPage, name='order_page')
 ]

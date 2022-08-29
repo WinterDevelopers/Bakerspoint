@@ -7,3 +7,8 @@ def index(request):
     template_name = 'index.html'
 
     return render(request,template_name)
+
+def orderPage(request):
+    template_name = 'order.html'
+
+    return render(request,template_name)

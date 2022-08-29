@@ -1,8 +1,16 @@
-console.log('Bakerspoint')
-
 let footer_img = document.querySelectorAll('[name="footer-img"]')
 let footer_p_item = document.querySelectorAll('[name="footer-dropdown"]')
-console.log(footer_p_item)
+
+let mobile_menu_btn = document.querySelector('#mobile-menu-btn')
+let mobile_menu = document.querySelector('#mobile-menu')
+let mobile_menu_cancel_btn = document.querySelector('#mobile-menu-cancel-btn')
+
+mobile_menu_btn.addEventListener('click',function(){
+    mobile_menu.className='mobile-menu no-display-menu'
+})
+mobile_menu_cancel_btn.addEventListener('click', function(){
+    mobile_menu.className='mobile-menu-cancel'
+})
 
 for(let a = 0; a < footer_img.length; a++){
 
@@ -17,5 +25,3 @@ for(let a = 0; a < footer_img.length; a++){
         }
     })
 }
-
-console.log('done!!')
