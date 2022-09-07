@@ -10,12 +10,10 @@ body{
 
 .cookie{
   height: 50rem;
-  /* background: #f8f8f8; */
 }
 
 .cookie-flex{
   width: 100%;
-  /* 35rem */
   height: 30rem;
   display: flex;
 }
@@ -52,10 +50,8 @@ body{
 }
 
 .line{
-  /* position: relative; */
   width: 80%;
   margin: 4rem auto;
-  /* padding: 3rem 0; */
   border-top: .1rem solid #000;
 }
 
@@ -63,19 +59,20 @@ body{
   width: 85%;
   margin: 1rem auto;
   justify-content: space-around;
-  /* position: absolute; */
-  /* top: 12rem; */
-  /* left: 0; */
-  /* right: 0; */
   padding-bottom: 5rem;
+  display: flex;
   flex-wrap: wrap;
 }
 
 .product-card{
-  /* height: 15rem; */
   background: #fff;
   border-radius: .4rem;
   margin-bottom: 2rem;
+  width: 14rem;
+}
+
+.product-card > div > img{
+  width: 100%;
 }
 
 .product-text{
@@ -85,6 +82,19 @@ body{
 
 .product-text h6{
   padding: 0 0 2rem 0;
+  font-weight: 400;
+}
+
+.product-text h4{
+  font-weight: 500;
+}
+
+.product-text p{
+  font-weight: 500;
+}
+
+.scroll-div{
+  width: 100%;
 }
 
 .scroll{
@@ -125,3 +135,144 @@ body{
 }
 
 
+/* MEDIA QUERIES */
+
+@media (max-width: 900px) and (min-width: 750px){
+  .cookie-flex{
+    height: 25rem;
+  }
+  .text-div{
+    padding-top: 3rem;
+  }
+  .text-div h2{
+    font-size: 2.3rem;
+  }
+  .text-div p{
+    width: 80%;
+  }
+  .product-card{
+    width: 11rem;
+  }
+  .product-text h6{
+    padding-bottom: .5rem;
+  }
+  .scroll-div{
+    width: 100%;
+  }
+  .scroll{
+    width: 35%;
+  }
+}
+
+@media (max-width: 749px) and (min-width: 540px){
+  .cookie-flex{
+    height: 23rem;
+  }
+  .text-div{
+    padding-top: .5rem;
+  }
+  .text-div p{
+    width: 80%;
+  }
+  .line{
+    width: 85%;
+  }
+  .product-main{
+    width: 90%;
+  }
+  .product-card{
+    width: 14rem;
+  }
+  .product-text h6{
+    padding-bottom: .5rem;
+  }
+  .scroll-div{
+    width: 14rem;
+    margin-top: 9rem;
+  }
+  .scroll{
+    width: 90%;
+  }
+}
+
+@media (max-width: 539px) and (min-width: 240px){
+  .cookie-flex{
+    display: block;
+    height: 100%;
+  }
+  .img-div{
+    width: 100%;
+    height: 25rem;
+  }
+  .text-div{
+    width: 100%;
+    padding: 4rem 0;
+  }
+  .text-div h2{
+    font-size: 3rem;
+    padding: 1rem 0;
+  }
+  .text-div p{
+    font-size: 1.2rem;
+    width: 80%;
+    line-height: 1.8rem;
+  }
+  .line{
+    width: 50%;
+    margin-top: 4rem;
+  }
+  .product-main{
+    flex-direction: column;
+    width: 90%;
+  }
+  .product-card{
+    margin: 0 auto 2rem auto;
+  }
+  .scroll-div{
+    width: 50%;
+    margin: 0 auto;
+  }
+  .scroll{
+    width: 90%;
+  }
+  .scroll button{
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+  .scroll button img{
+    width: 1.5rem;
+  }
+  .scroll h4{
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+}
+
+@media (max-width: 350px){
+  .product-main{
+    width: 95%;
+  }
+  .img-div{
+    width: 100%;
+    height: 20rem;
+  }
+  .text-div h2{
+    font-size: 2rem;
+    padding-top: 0;
+  }
+  .text-div p{
+    width: 80%;
+    line-height: 1.4rem;
+  }
+  .line{
+    width: 75%;
+    margin-top: 0;
+  }
+  .scroll{
+    width: 100%;
+  }
+  .scroll-div{
+    width: 60%;
+    margin: 0 auto;
+  }
+}
