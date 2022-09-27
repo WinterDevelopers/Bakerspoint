@@ -1,0 +1,328 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+  {% include 'navbar.html' %}
+  <div id="loader-container" class="no-display">
+    <div id="loader" class="loader"></div>
+  </div>
+  <section id="product-app">
+    
+    <div class="product-container">
+        <div>
+          <div class="product-images">
+            <img src="../../static/images/chococake.jpg" alt="" class="product-image skeleton">
+            <img v-for="image in product_images" :src="[[image.image]]" alt="" class="product-image skeleton no-display">
+            <img src="../../static/images/cookie-stack.png" alt="" class="product-image skeleton no-display">
+          </div>
+          <div class="product-image-btn image-btn-right">
+            <div class="product-image-btn-img" onclick="change_image(1)" >
+              <img src="{% static 'images/right-arrow-svgrepo-com(1).svg' %}" alt="">
+            </div>
+          </div>
+          <div class="product-image-btn image-btn-left">
+            <div class="product-image-btn-img" onclick="change_image(-1)">
+              <img src="{% static 'images/left-arrow-svgrepo-com.svg' %}" alt="">
+            </div>
+          </div>
+          <div class="bottom-indicator" id="bottom-indicator">
+            
+          </div>
+        </div>
+        <div class="no-display" id="product-info">
+          <div class="product-header">
+            <h1>{{product.name}}</h1>
+            <h4>&#8358; [[ product.price ]]</h4>
+          </div>
+          <div class="order-line"></div>
+          <div class="star-ratings">
+              <img class="review-stars" src="{% static 'images/star.svg' %}" alt="">
+              <img class="review-stars"  src="{% static 'images/star.svg' %}" alt="">
+              <img class="review-stars" src="{% static 'images/star.svg' %}" alt="">
+              <img class="review-stars" src="{% static 'images/star.svg' %}" alt="">
+          </div>
+          <p>
+            [[product.description]]
+          </p>
+          <div class="product-weight">
+              <p>WEIGHT</p>
+              <div class="product-weight-div weight-focus" v-on:click="updateProduct">500g</div>
+              <div class="product-weight-div" v-on:click="updateProduct" >1kg</div>
+              <div class="product-weight-div" @click="updateProduct">2.5kg</div>
+              <div class="product-weight-div" @click="updateProduct">5kg</div>
+          </div>
+          <div class="add-cart-qty">
+            <div class="product-qty">
+                <div class="btn-effect-1">
+                    <div>&#8722;</div>
+                </div>
+                <div style="background-color:#ffffff00;color: black;">
+                    <div id="product-quantity">[[count]]</div>
+                </div>
+                <div class="btn-effect-1">
+                    <div>&#43;</div>
+                </div>
+            </div>
+            <button class="add-cart-btn btn-effect-1">
+                add to cart
+            </button>
+        </div>
+      </div>
+      <div class="skeleton-container">
+        <div class="skeleton skeleton-text"></div>
+        <div class=" skeleton skeleton-text"></div>
+        <div class=" skeleton skeleton-text"></div>
+        <div class=" skeleton skeleton-text"></div>
+        <div class=" skeleton skeleton-text"></div>
+      </div>
+    </div>
+    <div class="order-line"></div>
+    <section class="customers-reviews" style="padding-top:3rem;">
+        <h1 class="light-header" style="margin-bottom:2rem;">REVIEWS</h1>
+    
+        <div>
+          <div class="customer-reviews-card bc-white">
+        <img src="{% static 'images/reviews.png' %}" alt="" class="skeleton">
+        <p>Lorem ipsum dolors it amet, consectetur adipisicing elit.
+          Eum aspernatur asperiores.
+        </p>
+        <div>
+          <h2>Chima okechukwu</h2>
+          <div>
+            <img class="review-stars" src="{% static 'images/star.svg' %}" alt="">
+            <img class="review-stars"  src="{% static 'images/star.svg' %}" alt="">
+            <img class="review-stars" src="{% static 'images/star.svg' %}" alt="">
+            <img class="review-stars" src="{% static 'images/star.svg' %}" alt="">
+          </div>
+        </div>      
+      </div>
+      <div class="customer-reviews-card bc-white">
+        <img src="{% static 'images/reviews.png' %}" alt="" class="skeleton">
+        <p>Lorem ipsum dolors it amet, consectetur adipisicing elit.
+          Eum aspernatur asperiores.
+        </p>
+        <div>
+          <h2>Chima okechukwu</h2>
+          <div>
+            <img class="review-stars" src="{% static 'images/star.svg' %}" alt="">
+            <img class="review-stars"  src="{% static 'images/star.svg' %}" alt="">
+            <img class="review-stars" src="{% static 'images/star.svg' %}" alt="">
+            <img class="review-stars" src="{% static 'images/star.svg' %}" alt="">
+          </div>
+        </div>      
+      </div>
+      <div class="customer-reviews-card bc-white">
+        <img src="{% static 'images/reviews.png' %}" alt="" class="skeleton">
+        <p>Lorem ipsum dolors it amet, consectetur adipisicing elit.
+          Eum aspernatur asperiores.
+        </p>
+        <div>
+          <h2>Chima okechukwu</h2>
+          <div>
+            <img class="review-stars" src="{% static 'images/star.svg' %}" alt="">
+            <img class="review-stars"  src="{% static 'images/star.svg' %}" alt="">
+            <img class="review-stars" src="{% static 'images/star.svg' %}" alt="">
+            <img class="review-stars" src="{% static 'images/star.svg' %}" alt="">
+          </div>
+        </div>      
+      </div>
+        </div>
+      </section>
+    <section>
+        <div class="related-products">
+            <h2 class="light-header ">MIGHT ALSO LIKE</h2>
+            <div class="product-main">
+              <div class="product-card">
+                <div>
+                  <img src="../../static/images/shakti-rajpurohit-qczubsyHofQ-unsplash(1).png" alt="" class="skeleton">
+                </div>
+                <div class="product-text">
+                  <h4>Chocolate</h4>
+                  <p>₦1000</p>
+                  <div>
+                    <img  src="{% static 'images/star.svg' %}" alt="">
+                    <img  src="{% static 'images/star.svg' %}" alt="">
+                    <img  src="{% static 'images/star.svg' %}" alt="">
+                    <img  src="{% static 'images/star.svg' %}" alt="">
+                    <div>[Reviews 49]</div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-card">
+                <div>
+                  <img src="../../static/images/shakti-rajpurohit-qczubsyHofQ-unsplash(1).png" alt="" class="skeleton">
+                </div>
+                <div class="product-text">
+                  <h4>Chocolate</h4>
+                  <p>₦1000</p>
+                  <div>
+                    <img  src="{% static 'images/star.svg' %}" alt="">
+                    <img  src="{% static 'images/star.svg' %}" alt="">
+                    <img  src="{% static 'images/star.svg' %}" alt="">
+                    <img  src="{% static 'images/star.svg' %}" alt="">
+                    <div>[Reviews 49]</div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-card">
+                <div>
+                  <img src="../../static/images/shakti-rajpurohit-qczubsyHofQ-unsplash(1).png" alt="" class="skeleton">
+                </div>
+                <div class="product-text">
+                  <h4>Chocolate</h4>
+                  <p>₦1000</p>
+                  <div>
+                    <img  src="{% static 'images/star.svg' %}" alt="">
+                    <img  src="{% static 'images/star.svg' %}" alt="">
+                    <img  src="{% static 'images/star.svg' %}" alt="">
+                    <img  src="{% static 'images/star.svg' %}" alt="">
+                    <div>[Reviews 49]</div>
+                  </div>
+                </div>
+              </div>
+              <div class="product-card">
+                <div>
+                  <img src="../../static/images/shakti-rajpurohit-qczubsyHofQ-unsplash(1).png" alt="" class="skeleton">
+                </div>
+                <div class="product-text">
+                  <h4>Chocolate</h4>
+                  <p>₦1000</p>
+                  <div>
+                    <img  src="{% static 'images/star.svg' %}" alt="">
+                    <img  src="{% static 'images/star.svg' %}" alt="">
+                    <img  src="{% static 'images/star.svg' %}" alt="">
+                    <img  src="{% static 'images/star.svg' %}" alt="">
+                    <div>[Reviews 49]</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+    </section>
+  </section>
+  <script>
+  let animation = document.querySelector('#loader-container')
+  
+  const {createApp} = Vue
+  let body_data = {'name':'{{product.id}}', 'weight':'500g'}
+  createApp({
+    data(){
+      return {
+        product:'',
+        product_images:'',
+        product_weight:'',
+        count:0
+      }
+    },
+    compilerOptions : {delimiters: ['[[',']]'] },
+    methods: { 
+
+      getProduct(){
+        const url = '/api/product'
+        const my_options = {
+        method:'POST',
+        headers:{'Content-Type':'application/json','X-CSRFToken':csrftoken},
+        body:JSON.stringify(body_data)
+        }
+        fetch(url, my_options)
+        .then(response => response.json())
+        .then(data => {    
+          console.log(data)   
+          this.product = data.product_info
+          this.product_images = data.product_images
+          
+          //swap the loading skeleton with the main data
+          document.querySelector('.skeleton-container').className="no-display"
+          document.getElementById('product-info').className="product-info"
+          }).then(myJsMethods=>{
+            imageBottomIndicator()
+          })
+        .catch(error => (error))
+        },
+
+      updateProduct(event){
+        //start loader animation as we wait response//
+        this.product_weight = event.target.innerHTML
+        body_data['weight'] = this.product_weight
+        animation.className = 'loader-container'
+        const url = '/api/product'
+        const my_options = {
+        method:'POST',
+        headers:{'Content-Type':'application/json','X-CSRFToken':csrftoken},
+        body:JSON.stringify(body_data)
+        }
+        fetch(url, my_options)
+        .then(response => response.json())
+        .then(data => {        
+            this.product = data.product_info
+            this.product_images = data.product_images
+            //stop loading animation as data is gotten//
+            animation.className = 'no-display'
+          }).then(myJsMethods=>{
+            imageBottomIndicator()
+          })
+        .catch(error => (error))
+        }
+
+    },
+
+    created: function(){
+      this.getProduct()
+    }
+  }).mount('#product-app')
+  
+  ///weight button toggle
+  let weight_btn = document.querySelectorAll('.product-weight-div')
+ 
+  for(let i=0;i<weight_btn.length; i++){
+    weight_btn[i].addEventListener("click",function(){
+      for(let a=0; a<weight_btn.length; a+=1){
+        weight_btn[a].className = 'product-weight-div'
+      }
+      weight_btn[i].classList.add('weight-focus')
+    })
+  }
+  
+  let bottom_indicator = document.querySelector('#bottom-indicator')
+  let slide_index = 1
+  //let add our bottom indicator as the page loads depending on the number of images
+  function imageBottomIndicator(){
+    bottom_indicator.innerHTML = ''
+    let image_slide = document.getElementsByClassName('product-image');
+    console.log(image_slide.length)
+    for(x =0; x<image_slide.length; x++){
+      let a = x
+      bottom_indicator.innerHTML += `<div class="bottom-indicator-active bottom-indicator-div" onclick="change_image_dot(${a+1})"></div>`
+    }
+    showSlide(slide_index)
+  }
+
+  
+  function change_image(n){
+    showSlide(slide_index += n)
+  }
+  function change_image_dot(n){
+    showSlide(slide_index =n)
+  }
+  //this would change the image depending onclick event
+  function showSlide(n){
+    let x
+    let image_slide = document.getElementsByClassName('product-image');
+    let image_dot_indicator = document.getElementsByClassName('bottom-indicator-div')
+    //if the number increases more than the number of pictures avaliable
+    if(n>image_slide.length){ slide_index=1}
+    //if the number decreases less than 1
+    if(n<1){slide_index=image_slide.length}
+
+    for(x =0; x<image_slide.length; x++){
+      image_slide[x].className ="product-image skeleton no-display"
+    }
+    for(x =0; x<image_dot_indicator.length; x++){
+      image_dot_indicator[x].classList.remove('bottom-indicator-active')
+    }
+    image_slide[slide_index-1].className='product-image skeleton image-fade'
+    image_dot_indicator[slide_index-1].classList.add('bottom-indicator-active')
+
+  }
+  </script>
+  {% endblock %}
+  

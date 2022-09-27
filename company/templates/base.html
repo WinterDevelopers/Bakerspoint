@@ -1,0 +1,58 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../../static/css/style.css">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <title>Document</title>
+</head>
+{% block content %}
+{% endblock content%}
+<footer>
+    <div class="footer-line" ></div>
+    <div class="footer-content">
+      <div>
+        <div class="footer-content-head-section">
+          <div class="footer-content-header"><h4>navigator</h4></div> 
+          <span ><img name="footer-img" src="{% static 'images/right-arrow-svgrepo-com(1).svg' %}" alt=""></span>
+        </div>
+        <div class="footer-content-p no-display-min" name="footer-dropdown">
+          <p>Sign Up</p>
+          <p>Blog</p>
+          <p>Products</p>
+        </div>
+      </div>
+      <div>
+        <div class="footer-content-head-section">
+          <div class="footer-content-header"><h4>Help</h4></div> 
+          <span ><img name="footer-img" src="{% static 'images/right-arrow-svgrepo-com(1).svg' %}" alt=""></span>
+        </div>
+        <div class="footer-content-p no-display-min" name="footer-dropdown">
+          <p>Ordering</p>
+          <p>Payments</p>
+          <p>Delivery</p>
+        </div>
+      </div>
+      <div>
+        <div class="footer-content-head-section">
+          <div class="footer-content-header"><h4>Socials</h4></div> 
+          <span ><img name="footer-img" src="{% static 'images/right-arrow-svgrepo-com(1).svg' %}"  alt=""></span>
+        </div>
+        <div class="footer-content-p no-display-min" name="footer-dropdown">
+          <p>E-mail</p>
+          <p>Instagram</p>
+          <p>Whatsapp</p>
+        </div>
+      </div>
+    </div>
+    <section class="footer-bottom">
+      <div>copyrights 2015-2022</div>
+      <div>Developed by winterdevelopers</div>
+    </section>
+  </footer>
+  
+  <script src="{% static 'js/script.js' %}"></script>

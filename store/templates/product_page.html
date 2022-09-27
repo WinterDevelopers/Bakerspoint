@@ -1,0 +1,113 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+{% include 'navbar.html' %}
+<body>
+  <section>
+    <div class="category-flex">
+      <div class="img-div">
+        <img src="{{category.imageURL}}" alt="">
+      </div>
+      <div class="text-div" style="background-color:{{category.color}};">
+        <!-- Add background -->
+        <h2>{{category.name}}</h2>
+        <p>
+          {{category.description}}
+        </p>
+      </div>
+    </div>
+    
+    <div class="product-display">
+      <div class="line"></div>
+      
+      <div class="product-main">
+        {% for product in products %}
+        <div class="product-card">
+          <a href="">
+          <div>
+            <img src="../../static/images/shakti-rajpurohit-qczubsyHofQ-unsplash(1).png" alt="">
+          </div>
+          <div class="product-text">
+            <h4>Chocolate</h4>
+            <p>₦1000</p>
+            <div>
+              <img  src="{% static 'images/star.svg' %}" alt="">
+              <img  src="{% static 'images/star.svg' %}" alt="">
+              <img  src="{% static 'images/star.svg' %}" alt="">
+              <img  src="{% static 'images/star.svg' %}" alt="">
+              <div>[Reviews 49]</div>
+            </div>
+          </div>
+          </a>
+        </div>
+        {% endfor %}
+        
+        <div class="product-card">
+          <a href="{% url 'store:product_item' 'citrus-chin-chin' %}">
+          <div>
+            <img src="../../static/images/shakti-rajpurohit-qczubsyHofQ-unsplash(1).png" alt="">
+          </div>
+          <div class="product-text">
+            <h4>Chocolate</h4>
+            <p>₦1000</p>
+            <div>
+              <img  src="{% static 'images/star.svg' %}" alt="">
+              <img  src="{% static 'images/star.svg' %}" alt="">
+              <img  src="{% static 'images/star.svg' %}" alt="">
+              <img  src="{% static 'images/star.svg' %}" alt="">
+              <div>[Reviews 49]</div>
+            </div>
+          </div>
+          </a>
+        </div>
+        <div class="product-card">
+          <a href="">
+          <div>
+            <img src="../../static/images/shakti-rajpurohit-qczubsyHofQ-unsplash(1).png" alt="">
+          </div>
+          <div class="product-text">
+            <h4>Chocolate</h4>
+            <p>₦1000</p>
+            <div>
+              <img  src="{% static 'images/star.svg' %}" alt="">
+              <img  src="{% static 'images/star.svg' %}" alt="">
+              <img  src="{% static 'images/star.svg' %}" alt="">
+              <img  src="{% static 'images/star.svg' %}" alt="">
+              <div>[Reviews 49]</div>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <div class="product-card">
+          <a href="">
+          <div>
+            <img src="../../static/images/shakti-rajpurohit-qczubsyHofQ-unsplash(1).png" alt="">
+          </div>
+          <div class="product-text">
+            <h4>Chocolate</h4>
+            <p>₦1000</p>
+            <div>
+              <img  src="{% static 'images/star.svg' %}" alt="">
+              <img  src="{% static 'images/star.svg' %}" alt="">
+              <img  src="{% static 'images/star.svg' %}" alt="">
+              <img  src="{% static 'images/star.svg' %}" alt="">
+              <div>[Reviews 49]</div>
+            </div>
+          </div>
+          </a>
+        </div>
+
+        <!-- <div class="scroll-div">
+          <div class="scroll">
+            <button><img src="../../static/images/arrow-left.svg" alt=""></button>
+            <h4>1</h4>
+            <button><img src="../../static/images/arrow-right.svg" alt=""></button>
+          </div>
+        </div> -->
+      </div>
+    </div>
+  </section>
+</body>
+{% endblock %}
+</html>

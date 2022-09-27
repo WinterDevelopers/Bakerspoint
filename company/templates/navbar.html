@@ -1,0 +1,101 @@
+{% load static %}
+<header>
+    <nav>
+      <div class="logo">
+        <div>LOGO</div>
+      </div>
+      <div class="options no-display-min">
+        <div>Menu</div>
+        <div>About</div>
+        <div>Contact</div>
+      </div>
+      <div class="cart">
+          <img src="{% static 'images/shoppin-paper-bag-svgrepo-com.svg' %}" alt="cat-bag">
+          <div>0</div>
+      </div>
+      <div class="nav-search no-display-min">
+        <form action="" method="post">
+          <input type="search">
+        </form>
+        <img src="{% static 'images/search-icon.svg' %}" alt="">
+      </div>
+      <div class="mobile-nav no-display-max" style="width:20%;">
+        <img src="{% static 'images/search-icon.svg' %}" alt="" style="width:1.3rem;">
+      </div>
+      <div id="mobile-menu-btn" class="no-display-max mobile-nav">
+        <img src="{% static 'images/hamburger-menu-svgrepo-com.svg' %}" alt="">
+      </div>
+      
+    </nav>
+    
+  </header>
+  
+  <div id="mobile-menu" class="no-display-max">
+    <div class="mobile-menu-header">
+      <div>
+        LOGO
+      </div>
+      <div id="mobile-menu-cancel-btn" class="mobile-menu-cancel-btn">
+        <img src="{% static 'images/cancel.svg' %}" alt="cancel" >
+      </div>
+    </div>
+    <div class="mobile-side-item">
+      <div>
+        Menu
+      </div>
+      <div>
+        <img src="{% static 'images/right-arrow-svgrepo-com(1).svg' %}" alt="">
+      </div>
+    </div>
+    <div class="mobile-side-item">
+      <div>
+        Delivery
+      </div>
+      <div>
+        <img src="{% static 'images/right-arrow-svgrepo-com(1).svg' %}" alt="">
+      </div>
+    </div>
+    <div class="mobile-side-item">
+      <div>
+        About
+      </div>
+      <div>
+        <img src="{% static 'images/right-arrow-svgrepo-com(1).svg' %}" alt="">
+      </div>
+    </div>
+    <div class="mobile-side-item">
+      <div>
+        Contact
+      </div>
+      <div>
+        <img src="{% static 'images/right-arrow-svgrepo-com(1).svg' %}" alt="">
+      </div>
+    </div>
+    <div class="mobile-side-item">
+      <div>
+        Special Order
+      </div>
+      <div>
+        <img src="{% static 'images/right-arrow-svgrepo-com(1).svg' %}" alt="">
+      </div>
+    </div>
+  </div>
+  <script type="text/javascript">
+    function getCookie(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                // Does this cookie string begin with the name we want?
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
+    const csrftoken = getCookie('csrftoken');
+ </script>
+  <div style="height:5rem;"></div> 

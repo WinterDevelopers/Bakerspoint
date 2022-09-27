@@ -1,0 +1,292 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  background: #f8f8f8;
+}
+
+.category{
+  height: 50rem;
+}
+
+.category-flex{
+  width: 100%;
+  height: 30rem;
+  display: flex;
+}
+
+.img-div{
+  width: 60%;
+}
+
+.text-div{
+  width: 40%;
+  background: #d9c3a9;
+  padding: 4rem 0 0 0;
+}
+
+.img-div img{
+  width: 100%;
+  height: 100%;object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+.text-div h2{
+  width: 80%;
+  margin: 0 auto;
+  padding: 3rem 0;text-transform: capitalize;
+  font-size: 2.5rem;
+  text-align: center;
+}
+.text-div p{
+  width: 60%;
+  margin: 0 auto;
+  text-align: justify;
+}
+
+.line{
+  width: 80%;
+  margin: 4rem auto;
+  border-top: .1rem solid #000;
+}
+
+.product-main{
+  width: 100%;
+  margin: 1rem auto;
+  justify-content: space-around;
+  padding-bottom: 5rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.product-card{
+  background: #fff;
+  border-radius: .4rem;
+  margin-bottom: 2rem;
+  width: 9rem;
+}
+
+.product-card >div>img{
+  width: 100%;border-radius:5px;
+  height: 10rem;object-fit: cover;
+}
+.product-text{
+  text-align: center;
+  padding: 1rem;
+  padding-bottom:0rem;
+}
+.product-text h6{
+  padding: 0 0 2rem 0;
+  font-weight: 400;
+}
+
+.product-text h4{
+  text-align: left;
+  font-weight: 500;
+  margin-bottom: 0.7rem;
+}
+
+.product-text p{
+  color: rgb(56, 56, 56);
+  font-weight: 800;font-size: small;
+  text-align: left;
+  margin-bottom: 0.7rem;
+}
+.product-text img{
+  width:0.9rem;
+}
+.product-text>div{
+  font-size:0.5rem;
+  display: flex;
+}
+.product-text>div>div{
+  margin: auto 0;
+}
+.scroll-div{
+  width: 100%;
+}
+
+.scroll{
+  width: 30%;
+  margin: 3rem auto; 
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scroll button{
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  border: 0;
+  background: #d9d9d9;
+  outline: none;
+}
+
+.scroll button:hover{
+  background: #968776;
+}
+
+.scroll button img{
+  width: 2.5rem;
+}
+
+.scroll h4{
+  width: 3rem;
+  height: 3rem;
+  font-weight: lighter;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  border: .2rem solid #968776;
+  border-radius: 50%;
+}
+
+
+/* MEDIA QUERIES */
+
+@media (max-width: 900px) and (min-width: 750px){
+  .category-flex{
+    height: 25rem;
+  }
+  .text-div{
+    padding-top: 3rem;
+  }
+  .text-div h2{
+    font-size: 2.3rem;
+  }
+  .text-div p{
+    width: 80%;
+  }
+  .product-card{
+    width: 11rem;
+  }
+  .product-text h6{
+    padding-bottom: .5rem;
+  }
+  .scroll-div{
+    width: 100%;
+  }
+  .scroll{
+    width: 35%;
+  }
+}
+
+@media (max-width: 749px) and (min-width: 540px){
+  .category-flex{
+    height: 23rem;
+  }
+  .text-div{
+    padding-top: .5rem;
+  }
+  .text-div p{
+    width: 80%;
+  }
+  .line{
+    width: 85%;
+  }
+  .product-main{
+    width: 90%;
+  }
+  .product-card{
+    width: 14rem;
+  }
+  .product-text h6{
+    padding-bottom: .5rem;
+  }
+  .scroll-div{
+    width: 14rem;
+    margin-top: 9rem;
+  }
+  .scroll{
+    width: 90%;
+  }
+}
+
+@media (max-width: 539px) and (min-width: 240px){
+  .category-flex{
+    display: block;
+    height: 100%;
+  }
+  .img-div{
+    width: 100%;
+    height: 25rem;
+  }
+  .text-div{
+    width: 100%;
+    padding: 4rem 0;
+  }
+  .text-div h2{
+    font-size: 3rem;
+    padding: 1rem 0;
+  }
+  .text-div p{
+    font-size: 1.2rem;
+    width: 80%;
+    line-height: 1.8rem;
+  }
+  .line{
+    width: 50%;
+    margin-top: 4rem;
+  }
+  .product-main{
+    flex-direction: flex;
+    width: 90%;
+  }
+  .product-card{
+    margin: 0 auto 2rem auto;
+  }
+  .scroll-div{
+    width: 50%;
+    margin: 0 auto;
+  }
+  .scroll{
+    width: 90%;
+  }
+  .scroll button{
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+  .scroll button img{
+    width: 1.5rem;
+  }
+  .scroll h4{
+    width: 2.8rem;
+    height: 2.8rem;
+  }
+}
+
+@media (max-width: 350px){
+  .product-main{
+    width: 95%;
+  }
+  .img-div{
+    width: 100%;
+    height: 20rem;
+  }
+  .text-div h2{
+    font-size: 2rem;
+    padding-top: 0;
+  }
+  .text-div p{
+    width: 80%;
+    line-height: 1.4rem;
+  }
+  .line{
+    width: 75%;
+    margin-top: 0;
+  }
+  .scroll{
+    width: 100%;
+  }
+  .scroll-div{
+    width: 60%;
+    margin: 0 auto;
+  }
+}

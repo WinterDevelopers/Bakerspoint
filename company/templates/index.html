@@ -1,94 +1,7 @@
+{% extends 'base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="stylesheet" href="../static/css/style.css">
-  <title>Document</title>
-</head>
-<body>
-  <header>
-    <nav>
-      <div class="logo">
-        <div>LOGO</div>
-      </div>
-      <div class="options no-display-min">
-        <div>cake</div>
-        <div>cookies</div>
-        <div>chin-chin</div>
-      </div>
-      <div class="cart">
-          <img src="../static/images/shoppin-paper-bag-svgrepo-com.svg" alt="cat-bag">
-          <div>4</div>
-      </div>
-      <div class="nav-search no-display-min">
-        <form action="" method="post">
-          <input type="search">
-        </form>
-        <img src="../static/images/search-icon.svg" alt="">
-      </div>
-      <div class="mobile-nav no-display-max" style="width:20%;">
-        <img src="../static/images/search-icon.svg" alt="" style="width:1.3rem;">
-      </div>
-      <div id="mobile-menu-btn" class="no-display-max mobile-nav">
-        <img src="../static/images/hamburger-menu-svgrepo-com.svg" alt="">
-      </div>
-      
-    </nav>
-    
-  </header>
-  <div id="mobile-menu" class="no-display-max">
-    <div class="mobile-menu-header">
-      <div>
-        LOGO
-      </div>
-      <div id="mobile-menu-cancel-btn" class="mobile-menu-cancel-btn">
-        <img src="../static/images/cancel.svg" alt="cancel" >
-      </div>
-    </div>
-    <div class="mobile-side-item">
-      <div>
-        Cake
-      </div>
-      <div>
-        <img src="../static/images/right-arrow-svgrepo-com(1).svg" alt="">
-      </div>
-    </div>
-    <div class="mobile-side-item">
-      <div>
-        Cookies
-      </div>
-      <div>
-        <img src="../static/images/right-arrow-svgrepo-com(1).svg" alt="">
-      </div>
-    </div>
-    <div class="mobile-side-item">
-      <div>
-        Chin-Chin
-      </div>
-      <div>
-        <img src="../static/images/right-arrow-svgrepo-com(1).svg" alt="">
-      </div>
-    </div>
-    <div class="mobile-side-item">
-      <div>
-        Track Item
-      </div>
-      <div>
-        <img src="../static/images/right-arrow-svgrepo-com(1).svg" alt="">
-      </div>
-    </div>
-    <div class="mobile-side-item">
-      <div>
-        Special Order
-      </div>
-      <div>
-        <img src="../static/images/right-arrow-svgrepo-com(1).svg" alt="">
-      </div>
-    </div>
-  </div>
+  {% block content %}
+  {% include 'navbar.html' %}
   <div class="hero-section">
     <div>
       <h1 class="heading white header-font">Bakers Point</h1>
@@ -182,10 +95,10 @@
 
     <div class="bakery-menu-cake bakery-menu bakery-menu-reverse">
       <div class="item-1">
-        <h2>Cakes</h2>
+        <h2>{{cake.name}}</h2>
         <p class="item-description">This is why I am telling you that you need more cake, but this is a demo, thank you. I hope you understand, thank you, you're welcome.</p>
         <div class="btn-div2">
-          <a href="">
+          <a href="{% url 'store:product_page' cake.name %}">
             <button class="menu-button button-cake">
               <p style="align-items: center; display: flex;">View</p>
               <img src="../static/images/arrow-right.svg" alt="">
@@ -194,19 +107,19 @@
         </div>
       </div>
       <div class="image-1">
-        <img src="../static/images/full-cake.png" alt="Chocolate & Vanilla Cake">
+        <img src="{{cake.imageURL}}" alt="Chocolate & Vanilla Cake">
       </div>
     </div>
 
     <div class="bakery-menu-cookies bakery-menu bakery-menu-none-reverse">
       <div class="image-2">
-        <img src="../static/images/cookies.png" alt="Cookies">
+        <img src="{{cookies.imageURL}}" alt="Cookies">
       </div>
       <div class="item-2">
-        <h2>Cookies</h2>
+        <h2>{{cookies.name}}</h2>
         <p class="item-description">This is why I am telling you that you need more cookies, but this is a demo, thank you. I hope you understand, thank you, you're welcome.</p>
         <div class="btn-div2">
-          <a href="">
+          <a href="{% url 'store:product_page' cookies.name %}">
             <button class="menu-button button-cookies">
               <p style="align-items: center; display: flex;">View</p>
               <img src="../static/images/arrow-right.svg" alt="">
@@ -215,13 +128,12 @@
         </div>
       </div>
     </div>
-    <div class="bakery-menu-chin-chin bakery-menu bakery-menu-reverse">
-      
+    <div class="bakery-menu-chin-chin bakery-menu bakery-menu-reverse"> 
       <div class="item-2">
-        <h2>Chin-Chin</h2>
+        <h2>{{chinchin.name}}</h2>
         <p class="item-description">This is why I am telling you that you need more cookies, but this is a demo, thank you. I hope you understand, thank you, you're welcome.</p>
         <div class="btn-div2">
-          <a href="">
+          <a href="{% url 'store:product_page' chinchin.name %}">
             <button class="menu-button button-chin-chin">
               <p style="align-items: center; display: flex;">View</p>
               <img src="../static/images/arrow-right.svg" alt="">
@@ -230,7 +142,24 @@
         </div>
       </div>
       <div class="image-2">
-        <img src="../static/images/chin-chin-hello 1.png" alt="Cookies">
+        <img src="{{chinchin.imageURL}}" alt="Cookies">
+      </div>
+    </div>
+    <div class="bakery-menu-peanut bakery-menu bakery-menu-none-reverse">
+      <div class="image-2">
+        <img src="{{peanut.imageURL}}" alt="Cookies">
+      </div>
+      <div class="item-2">
+        <h2>{{peanut.name}}</h2>
+        <p class="item-description">This is why I am telling you that you need more cookies, but this is a demo, thank you. I hope you understand, thank you, you're welcome.</p>
+        <div class="btn-div2">
+          <a href="{% url 'store:product_page' peanut.name %}">
+            <button class="menu-button button-peanut">
+              <p style="align-items: center; display: flex;">View</p>
+              <img src="../static/images/arrow-right.svg" alt="">
+            </button>
+          </a>
+        </div>
       </div>
     </div>
   </section>
@@ -254,50 +183,42 @@
 
     <div>
       <div class="customer-reviews-card bc-white">
+        <img src="../static/images/reviews.png" alt="">
+        <p>Lorem ipsum dolors it amet, consectetur adipisicing elit.
+          Eum aspernatur asperiores.
+        </p>
         <div>
-          <img src="../static/images/reviews.png" alt="">
+          <h2>Chima okechukwu</h2>
           <div>
-            <h2>Chima okechukwu</h2>
-            <div>
-              <img class="review-stars" src="../static/images/star.svg" alt="">
-              <img class="review-stars"  src="../static/images/star.svg" alt="">
-              <img class="review-stars" src="../static/images/star.svg" alt="">
-              <img class="review-stars" src="../static/images/star.svg" alt="">
-            </div>
+            <img class="review-stars" src="../static/images/star.svg" alt="">
+            <img class="review-stars" src="../static/images/star.svg" alt="">
+            <img class="review-stars" src="../static/images/star.svg" alt="">
+            <img class="review-stars" src="../static/images/star.svg" alt="">
+            <img class="review-stars" src="../static/images/star.svg" alt="">
+        
           </div>
-        </div>
-        <div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Eum aspernatur asperiores, odio ea saepe, delectus dignissimos 
-            pariatur harum natus tempore perferendis animi qui ad
-          </p>
-        </div>
-  
+        </div>      
       </div>
       <div class="customer-reviews-card bc-white">
+        <img src="../static/images/reviews.png" alt="">
+        <p>Lorem ipsum dolors it amet, consectetur adipisicing elit.
+          Eum aspernatur asperiores.
+        </p>
         <div>
-          <img src="../static/images/reviews.png" alt="">
+          <h2>Chima okechukwu</h2>
           <div>
-            <h2>Chima okechukwu</h2>
-            <div>
-              <img class="review-stars" src="../static/images/star.svg" alt="">
-              <img class="review-stars"  src="../static/images/star.svg" alt="">
-              <img class="review-stars" src="../static/images/star.svg" alt="">
-              <img class="review-stars" src="../static/images/star.svg" alt="">
-            </div>
+            <img class="review-stars" src="../static/images/star.svg" alt="">
+            <img class="review-stars"  src="../static/images/star.svg" alt="">
+            <img class="review-stars" src="../static/images/star.svg" alt="">
+            <img class="review-stars" src="../static/images/star.svg" alt="">
           </div>
-        </div>
-        <div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Eum aspernatur asperiores, odio ea saepe, delectus dignissimos 
-            pariatur harum natus tempore perferendis animi qui ad
-          </p>
-        </div>
-  
+        </div>      
       </div>
       <div class="customer-reviews-card bc-white">
-        <div>
           <img src="../static/images/reviews.png" alt="">
+          <p>Lorem ipsum dolors it amet, consectetur adipisicing elit.
+            Eum aspernatur asperiores.
+          </p>
           <div>
             <h2>Chima okechukwu</h2>
             <div>
@@ -306,15 +227,23 @@
               <img class="review-stars" src="../static/images/star.svg" alt="">
               <img class="review-stars" src="../static/images/star.svg" alt="">
             </div>
-          </div>
+          </div>      
         </div>
-        <div>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-            Eum aspernatur asperiores, odio ea saepe, delectus dignissimos 
-            pariatur harum natus tempore perferendis animi qui ad
+        <div class="customer-reviews-card bc-white">
+          <img src="../static/images/reviews.png" alt="">
+          <p>Lorem ipsum dolors it amet, consectetur adipisicing elit.
+            Eum aspernatur asperiores.
           </p>
+          <div>
+            <h2>Chima okechukwu</h2>
+            <div>
+              <img class="review-stars" src="../static/images/star.svg" alt="">
+              <img class="review-stars"  src="../static/images/star.svg" alt="">
+              <img class="review-stars" src="../static/images/star.svg" alt="">
+              <img class="review-stars" src="../static/images/star.svg" alt="">
+            </div>
+          </div>      
         </div>
-  
       </div>
     </div>
   </section>
@@ -343,50 +272,8 @@
   </section>
   <br>
   <br>
-  <footer>
-    <div class="footer-line" ></div>
-    <div class="footer-content">
-      <div>
-        <div class="footer-content-head-section">
-          <div class="footer-content-header"><h4>navigator</h4></div> 
-          <span ><img name="footer-img" src="../static/images/right-arrow-svgrepo-com(1).svg" alt=""></span>
-        </div>
-        <div class="footer-content-p no-display-min" name="footer-dropdown">
-          <p>Sign Up</p>
-          <p>Blog</p>
-          <p>Products</p>
-        </div>
-      </div>
-      <div>
-        <div class="footer-content-head-section">
-          <div class="footer-content-header"><h4>Help</h4></div> 
-          <span ><img name="footer-img" src="../static/images/right-arrow-svgrepo-com(1).svg" alt=""></span>
-        </div>
-        <div class="footer-content-p no-display-min" name="footer-dropdown">
-          <p>Ordering</p>
-          <p>Payments</p>
-          <p>Delivery</p>
-        </div>
-      </div>
-      <div>
-        <div class="footer-content-head-section">
-          <div class="footer-content-header"><h4>Socials</h4></div> 
-          <span ><img name="footer-img" src="../static/images/right-arrow-svgrepo-com(1).svg"  alt=""></span>
-        </div>
-        <div class="footer-content-p no-display-min" name="footer-dropdown">
-          <p>E-mail</p>
-          <p>Instagram</p>
-          <p>Whatsapp</p>
-        </div>
-      </div>
-    </div>
-    <section class="footer-bottom">
-      <div>copyrights 2015-2022</div>
-      <div>Developed by winterdevelopers</div>
-    </section>
-  </footer>
-
-  <script src="{% static 'js/sctipt.js' %}"></script>
+  {% endblock %}
+  <!-- <script src="{% static 'js/sctipt.js' %}"></script> -->
   <!-- <script src="../static/js/sctipt.js"></script> -->
 </body>
 </html>
